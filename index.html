@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>To Do List Web App</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./script.js"></script>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div id="login_div">
+                <input id="username" type="text" placeholder="username" />
+                <input id="passsword" type="text" placeholder="passsword" />
+                <button onclick="login()">Login</button>
+                <button onclick="signin()">Sign in</button>
+            </div>
+
+            <div id="user_div">
+                <form onsubmit="logout()">
+                    <p id="user_para" class="logged-in">You're currently logged in.</p>
+                    <button>Logout</button>
+                </form>
+            </div>
+
+            <div id="signin_div">
+                <input id="username-sign" type="text" placeholder="username" />
+                <input id="passsword-sign" type="text" placeholder="passsword" />
+                <button onclick="submit()">Submit</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <div id="after" class="title">
+                TO DO LIST
+            </div>
+            <div id="before" class="title">
+                Please Log in or Sign in.
+            </div>
+            <div id="signin" class="title">
+                Please fill in username and password for sign in.
+            </div>
+        </div>
+        <div id="new-todo" class="new-todo">
+            <div class="new-todo-input">
+                <form onsubmit="addItem(event)">
+                    <input id="todo-input" type="text" placeholder="Fills with texts and press 'enter' button." />
+                </form>
+            </div>
+        </div>
+
+        <div id="edit-todo" class="new-todo">
+            <div class="new-todo-input">
+                <input id="todo-edit" type="text" placeholder="Fills with texts and press edit button below." />
+            </div>
+        </div>
+        <div id="todo-items-wrapper" class="todo-items-wrapper">
+            <div class="todo-items">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
